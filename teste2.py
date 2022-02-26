@@ -8,8 +8,8 @@ from tkinter.messagebox import *
 import sqlite3
 			
 
-# Criacao do banco de dados "teste2" com a tabela user caso nao exista!
-with sqlite3.connect('teste2.db') as db:
+# Criacao do banco de dados "SEU BANCO DE DADOS" com a tabela user caso nao exista!
+with sqlite3.connect("SEU BANCO DE DADOS") as db:
     c = db.cursor()
 
 c.execute('CREATE TABLE IF NOT EXISTS user (username TEXT NOT NULL PRIMARY KEY,password TEXT NOT NULL,nome TEXt,email TEXt,cpf TEXt);')
@@ -32,7 +32,7 @@ class main:
     #Funcao de Login
     def login(self):
     	
-        with sqlite3.connect('teste2.db') as db:
+        with sqlite3.connect('SEU BANCO DE DADOS') as db:
             c = db.cursor()
 
         find_user = ('SELECT * FROM user WHERE username = ? and password = ?')
@@ -459,7 +459,7 @@ class main:
             
     def new_user(self):
     	#Estabelecendo conexao
-        with sqlite3.connect('teste2.db') as db:
+        with sqlite3.connect('SEU BANCO DE DADOS') as db:
             c = db.cursor()
 
         #Find Existing username if any take proper action
